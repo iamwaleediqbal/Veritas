@@ -58,17 +58,25 @@ class EditMagazine extends React.Component{
         
         const response = db.collection("magazines");
         const {image} = this.state;
-        if(this.images.length > 0){
+        if(this.images.length === 1){
+            if(this.images[0].name.includes(".pdf"))
+                fireBaseApp.storage().ref(`magazines/ebooks/${this.images[0].name}`).put(this.images[0]);
+            else
+                fireBaseApp.storage().ref(`magazines/covers/${this.images[0].name}`).put(this.images[0]);
+        }
+        if(this.images.length > 1){
             fireBaseApp.storage().ref(`magazines/covers/${this.images[0].name}`).put(this.images[0]);
             fireBaseApp.storage().ref(`magazines/ebooks/${this.images[1].name}`).put(this.images[1]);
         }
+        
         fireBaseApp
         .firestore()
         .collection('magazines').doc(this.state.id)
         .update({
-            photo_url: this.images.length === 0 ? this.state.photo_url :this.images[0].name,
-            mag_url: this.images.length === 0 ? this.state.mag_url :this.images[1].name,
-            issue_date:  this.state.issue_date,
+            
+            photo_url: this.images.length === 0 ? this.state.photo_url :(this.images.length === 1 ? (this.images[0].name.includes(".pdf") ? this.state.photo_url : this.images[0].name) : this.images[0].name),
+            book_url: this.images.length === 0 ? this.state.book_url :(this.images.length === 1 ? (this.images[0].name.includes(".pdf") ? this.images[0].name : this.state.book_url) : this.images[1].name),
+           issue_date:  this.state.issue_date,
             description:this.state.description,
             title:this.state.title,
             
