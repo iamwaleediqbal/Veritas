@@ -94,7 +94,7 @@ const Dashboard = () => {
             <ul className = "Books" id = "Books">
 
                 {book.filter(books => books.publisher.includes(currentUser.displayName)).filter(books => search === '' ? books:books.title.toLowerCase().includes(search)).map((books,index)=>{
-                    const photoURL = photourl.filter((e) => e.includes(books.photo_url.split(' ')));
+                    const photoURL = photourl.filter((e) => e.includes(books.photo_url));
                     console.log(photoURL + "   " + books.photo_url);
                 return(
                 
