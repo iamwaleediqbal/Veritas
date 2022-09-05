@@ -1,16 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from './App';
-import Header from './Components/Header';
-import Login from './Components/Login';
-import Navigation from './Components/Navigation';
+import Navigation from "./Components/Navigation";
 
 ReactDOM.render(
-
   <React.StrictMode>
-       <Navigation />
+    <Navigation />
   </React.StrictMode>,
-  document.getElementById('root')
-  
+  document.getElementById("root")
 );

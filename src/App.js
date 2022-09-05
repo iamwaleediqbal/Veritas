@@ -1,30 +1,23 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import {
   FirebaseAuthProvider,
   FirebaseAuthConsumer,
   IfFirebaseAuthed,
-  IfFirebaseAuthedAnd
+  IfFirebaseAuthedAnd,
 } from "@react-firebase/auth";
-import  config  from "./config/configdb";
+import config from "./config/configdb";
 
-import Login from './Components/Login';
-import Header from './Components/Header';
 
 export default function App() {
   return (
-      <FirebaseAuthProvider {...config} firebase={firebase}>
+    <FirebaseAuthProvider {...config} firebase={firebase}>
       <div>
         <button
           onClick={() => {
-            const googleAuthProvider = new firebase.auth.EmailAuthProvider;
+            const googleAuthProvider = new firebase.auth.EmailAuthProvider();
             firebase.auth().signInWithPopup(googleAuthProvider);
           }}
         >
@@ -70,7 +63,5 @@ export default function App() {
         </div>
       </div>
     </FirebaseAuthProvider>
-    
   );
 }
-
