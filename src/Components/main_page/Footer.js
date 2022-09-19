@@ -5,15 +5,20 @@ import ReactDOM from "react-dom";
 const Footer = () => {
   return (
     <>
-      <footer
-        className="pswp__caption u-align-center u-clearfix u-footer u-grey-80 u-footer"
-        id="sec-0cf6"
-      >
-        <div className="u-clearfix u-sheet u-sheet-1">
-          <p className="u-small-text u-text u-text-variant u-text-1">
-            Powered By: Mela Blocks Technologies
-          </p>
-        </div>
+      <footer className="fixed inset-x-0 bottom-0 p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://melablocks.com/" className="hover:underline">Melablocks Inc.™</a>. All Rights Reserved.
+          </span>
+          <ul className="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+              <li>
+                  <a href="/about" className="mr-4 hover:underline md:mr-6">About</a>
+              </li>
+              <li>
+                  <a href="/contact" className="hover:underline mr-4">Contact</a>
+              </li>
+              <li>
+                  <a href="/publisher" className="hover:underline">Are you a publisher?</a>
+              </li>
+          </ul>
       </footer>
     </>
   );

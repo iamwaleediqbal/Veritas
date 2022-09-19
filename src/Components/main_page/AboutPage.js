@@ -12,6 +12,7 @@ const AboutPage = () => {
       <section
         className="pt-0 u-clearfix u-image u-shading u-section-1"
         id="sec-d193"
+        style={{"backgroundImage": 'url("images/bg.svg")'}}
       >
         <div className="op-0-8 bookform u-clearfix u-sheet u-sheet-1">
           <div className="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
