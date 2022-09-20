@@ -26,7 +26,7 @@ class MagazineForm extends React.Component {
     if (e.target.files[0]) {
       const image = e.target.files[0];
       this.images.push(image);
-      console.log(this.images);
+      ;
       this.setState(() => ({ image }));
     }
   };
@@ -43,7 +43,7 @@ class MagazineForm extends React.Component {
       .ref(`magazines/ebooks/${this.images[1].name}`)
       .put(this.images[1]);
     const docId = fireBaseApp.firestore().collection("magazines").doc();
-    console.log(docId.id);
+    ;
 
     docId.set({
       bookid: docId.id,
@@ -55,7 +55,7 @@ class MagazineForm extends React.Component {
       publisher: firebase.auth().currentUser.displayName,
     });
 
-    console.log(image.name);
+    ;
     this.props.history.push("/dashboard");
   };
 
@@ -64,7 +64,7 @@ class MagazineForm extends React.Component {
     /* Send the message to Firebase */
 
     const db = fireBaseApp.firestore();
-    console.log(this.state);
+    ;
     const img = fireBaseApp.storage();
     img.ref();
     db.collection("magazines")
@@ -159,7 +159,7 @@ class MagazineForm extends React.Component {
                   type="submit"
                   onClick={this.handleUpload}
                 >
-                  Upload <img src={"/Assets/upp.png"} class="pl-2.5" />
+                  Upload <img src={"/Assets/upp.png"} className="pl-2.5" />
                 </button>
               </form>
             </div>

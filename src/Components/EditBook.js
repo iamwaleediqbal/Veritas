@@ -15,7 +15,7 @@ class EditBook extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
     const data = JSON.parse(localStorage.getItem("data"));
-    console.log(data);
+    ;
     this.state = {
       id: data.bookid,
       author: data.authors.toString(),
@@ -47,7 +47,7 @@ class EditBook extends React.Component {
     if (e.target.files[0]) {
       const image = e.target.files[0];
       this.images.push(image);
-      console.log(this.images);
+      ;
       this.setState(() => ({ image }));
     }
   };
@@ -116,7 +116,7 @@ class EditBook extends React.Component {
     /* Send the message to Firebase */
 
     const db = fireBaseApp.firestore();
-    console.log(this.state);
+    ;
     const img = fireBaseApp.storage();
     img.ref();
     let id = this.state.id;

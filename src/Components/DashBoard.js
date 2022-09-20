@@ -52,7 +52,7 @@ const Dashboard = () => {
         });
       return data;
     } catch (error) {
-      console.log(error);
+      (error);
     }
   };
   let imgData = async () => {
@@ -64,7 +64,7 @@ const Dashboard = () => {
   const loadImages = async () => {
     const urls = await imgData();
     setPhotourl(urls);
-    photourl.forEach((R) => console.log(R));
+    photourl.forEach((R) => (R));
   };
   let imgMagData = async () => {
     let result = await photos.child(`magazines/covers/`).listAll();
@@ -88,7 +88,7 @@ const Dashboard = () => {
   const handleEdit = (books) => {
     eventBus.dispatch("dataSent", { message: books });
     localStorage.setItem("data", JSON.stringify(books));
-    console.log(books);
+    ;
   };
   const booksDisplay = () => {
     return (
@@ -109,14 +109,14 @@ const Dashboard = () => {
               const photoURL = photourl.filter((e) =>
                 e.includes(books.photo_url)
               );
-              console.log(photoURL + "   " + books.photo_url);
+              ;
               return (
                 <li key={index}>
                   <div className="book-list-icon yellow-icon"></div>
 
                   <figure>
                     <img src={photoURL} alt="Book" className="w-72" />
-                    <figcaption class="h-auto">
+                    <figcaption className="h-auto">
                       <header>
                         <h3>{books.title} </h3>
                         <p overflow="hidden">
@@ -189,7 +189,7 @@ const Dashboard = () => {
               const photoURL = magphotourl.filter((e) =>
                 e.includes(books.photo_url)
               );
-              console.log(photoURL + "   " + books.photo_url);
+              ;
               return (
                 <li key={index}>
                   <div className="book-list-icon red-icon"></div>
@@ -201,7 +201,7 @@ const Dashboard = () => {
                       width="350vh"
                       height="400vh"
                     />
-                    <figcaption class="h-auto">
+                    <figcaption className="h-auto">
                       <header>
                         <h3>{books.title} </h3>
                         <p overflow="hidden">
@@ -282,7 +282,6 @@ const Dashboard = () => {
                           placeholder="Search by Keyword"
                           id="keywords"
                           name="keywords"
-                          value={search}
                           onChange={(e) => {
                             setSearch(e.target.value);
                           }}
