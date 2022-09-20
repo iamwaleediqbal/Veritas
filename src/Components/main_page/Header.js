@@ -97,7 +97,7 @@ const Header = () => {
                   <div className="u-menu-close"></div>
                   <ul className="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
                     <li className="u-nav-item">
-                      <a className="u-button-style u-nav-link" href="Home.html">
+                      <a className="u-button-style u-nav-link" href="/">
                         Home
                       </a>
                     </li>

@@ -87,12 +87,12 @@ class BookForm extends React.Component {
       <div>
         <Header />
         <div className="bookbody">
-          <h3 align="center" className="heading">
+          <h3 align="center" className="entry-content font-extrabold heading">
             Add A Book
           </h3>
           <div className="container" id="container">
-            <div className=" form-container log-in-container">
-              <form className="bookForm" onSubmit={this.addMessage.bind(this)}>
+            <div className=" form-container px-10 log-in-container">
+              <form className="bookForm space-y-12" onSubmit={this.addMessage.bind(this)}>
                 <br />
                 <br />
                 <input
@@ -136,7 +136,7 @@ class BookForm extends React.Component {
                 />
               </form>
             </div>
-            <div className="overlay-container uc">
+            <div className="flex-col overlay-container uc">
               <form action="#">
                 <br />
                 <br />
@@ -164,11 +164,11 @@ class BookForm extends React.Component {
                 <br />
                 <br />
                 <button
-                  className="BookButton"
+                  className="BookButton flex-c mx-auto"
                   type="submit"
                   onClick={this.handleUpload}
                 >
-                  Upload <img src={"/Assets/upp.png"} />
+                  Upload <img src={"/Assets/upp.png"} class="pl-2.5" />
                 </button>
               </form>
             </div>

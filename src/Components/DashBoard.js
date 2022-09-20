@@ -5,6 +5,7 @@ import fireBaseApp from "../config/configdb";
 import "../css/Header.css";
 import eventBus from "./EventBus";
 import firebase from "firebase";
+import Footer from "./PublisherFooter";
 
 const Dashboard = () => {
   const hist = useHistory();
@@ -92,7 +93,11 @@ const Dashboard = () => {
   const booksDisplay = () => {
     return (
       <div className="booksmedia-fullwidth">
-        <ul className="Books" id="Books">
+        <h3 align="center" className="entry-content font-extrabold heading">
+            Books
+          </h3>
+          
+        <ul className="row Books" id="Books">
           {book
             .filter((books) =>
               books.publisher.includes(currentUser.displayName)
@@ -113,10 +118,9 @@ const Dashboard = () => {
                     <img
                       src={photoURL}
                       alt="Book"
-                      width="350vh"
-                      height="400vh"
+                      className="w-72"
                     />
-                    <figcaption>
+                    <figcaption class="h-auto">
                       <header>
                         <h3>{books.title} </h3>
                         <p overflow="hidden">
@@ -125,7 +129,7 @@ const Dashboard = () => {
                       </header>
                       <p>{books.synopsis.substring(0, 200)}</p>
                       <div className="actions">
-                        <ul id="actions0">
+                        <ul id="actions0" className="flex justify-content-around my-0">
                           <li>
                             <img
                               src={"/Assets/delico.png"}
@@ -170,7 +174,11 @@ const Dashboard = () => {
   const magazineDisplay = () => {
     return (
       <div className="booksmedia-fullwidth">
-        <ul className="Magazines" id="Magazines">
+        <h3 align="center" className="entry-content font-extrabold heading">
+            Magazines
+          </h3>
+          
+        <ul className="Magazines row" id="Magazines">
           {mag
             .filter((books) =>
               books.publisher.includes(currentUser.displayName)
@@ -194,7 +202,7 @@ const Dashboard = () => {
                       width="350vh"
                       height="400vh"
                     />
-                    <figcaption>
+                    <figcaption class="h-auto">
                       <header>
                         <h3>{books.title} </h3>
                         <p overflow="hidden">
@@ -258,25 +266,11 @@ const Dashboard = () => {
     <div>
       {}
       <Header />
-      <form className="hupbtn" style={{ "margin-bottom": "40px" }}>
-        <button
-          className=" upbtn"
-          onClick={() => hist.push("/bookupload")}
-          style={{ "margin-right": "30px" }}
-        >
-          <img src={"/Assets/upload.png"} />
-          Upload a Book
-        </button>
-        <button className=" upbtn" onClick={() => hist.push("/magazineupload")}>
-          <img src={"/Assets/upload.png"} />
-          Upload a Magazine
-        </button>
-      </form>
-      <div id="content" className="site-content">
+      <div id="content" className="pb-14 site-content">
         <div id="primary" className="content-area">
           <main id="main" className="site-main">
             <div className="books-full-width">
-              <div className="container">
+              <div className="mx-auto px-10">
                 <section className="search-filters">
                   <div className="filter-box">
                     <h3 color="#111B2B" display="block" width="50%">
@@ -327,6 +321,7 @@ const Dashboard = () => {
           </main>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

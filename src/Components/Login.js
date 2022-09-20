@@ -82,8 +82,8 @@ const Login = () => {
 
   return (
     <div className="limiter">
-		<div className="container-login100">
-			<div className="wrap-login100">
+		<div className="container-login100" style={{"background": '#3e3e3e'}}>
+			<div className="wrap-login100" style={{"backgroundImage": 'url("images/bg.svg")'}}>
 				<div className="login100-pic js-tilt" data-tilt>
         <h2>Welcome To Veritas Publisher Portal</h2>
         <p>Please Enter your credentials and login to your account</p>				
