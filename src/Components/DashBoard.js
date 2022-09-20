@@ -94,9 +94,9 @@ const Dashboard = () => {
     return (
       <div className="booksmedia-fullwidth">
         <h3 align="center" className="entry-content font-extrabold heading">
-            Books
-          </h3>
-          
+          Books
+        </h3>
+
         <ul className="row Books" id="Books">
           {book
             .filter((books) =>
@@ -115,11 +115,7 @@ const Dashboard = () => {
                   <div className="book-list-icon yellow-icon"></div>
 
                   <figure>
-                    <img
-                      src={photoURL}
-                      alt="Book"
-                      className="w-72"
-                    />
+                    <img src={photoURL} alt="Book" className="w-72" />
                     <figcaption class="h-auto">
                       <header>
                         <h3>{books.title} </h3>
@@ -129,7 +125,10 @@ const Dashboard = () => {
                       </header>
                       <p>{books.synopsis.substring(0, 200)}</p>
                       <div className="actions">
-                        <ul id="actions0" className="flex justify-content-around my-0">
+                        <ul
+                          id="actions0"
+                          className="flex justify-content-around my-0"
+                        >
                           <li>
                             <img
                               src={"/Assets/delico.png"}
@@ -175,9 +174,9 @@ const Dashboard = () => {
     return (
       <div className="booksmedia-fullwidth">
         <h3 align="center" className="entry-content font-extrabold heading">
-            Magazines
-          </h3>
-          
+          Magazines
+        </h3>
+
         <ul className="Magazines row" id="Magazines">
           {mag
             .filter((books) =>
@@ -321,7 +320,7 @@ const Dashboard = () => {
           </main>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -10,7 +10,11 @@ const ContactPage = () => {
   return (
     <>
       <Header />
-      <section className="pt-0 u-align-center u-clearfix u-section-1" id="sec-b7a4" style={{"backgroundImage": 'url("images/bg.svg")'}}>
+      <section
+        className="pt-0 u-align-center u-clearfix u-section-1"
+        id="sec-b7a4"
+        style={{ backgroundImage: 'url("images/bg.svg")' }}
+      >
         <div className="op-0-8 bookform u-clearfix u-sheet u-valign-middle u-sheet-1">
           <h2 className="u-text u-text-default u-text-1">Contact Us</h2>
           <div className="u-form u-form-1">

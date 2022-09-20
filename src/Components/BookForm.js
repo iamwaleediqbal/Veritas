@@ -92,7 +92,10 @@ class BookForm extends React.Component {
           </h3>
           <div className="container" id="container">
             <div className=" form-container px-10 log-in-container">
-              <form className="bookForm space-y-12" onSubmit={this.addMessage.bind(this)}>
+              <form
+                className="bookForm space-y-12"
+                onSubmit={this.addMessage.bind(this)}
+              >
                 <br />
                 <br />
                 <input

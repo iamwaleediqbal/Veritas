@@ -10,7 +10,6 @@ import {
 } from "@react-firebase/auth";
 import config from "./config/configdb";
 
-
 export default function App() {
   return (
     <FirebaseAuthProvider {...config} firebase={firebase}>
